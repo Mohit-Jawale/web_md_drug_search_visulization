@@ -137,7 +137,7 @@ generatecloud()
 # # Run the app
 if __name__ == '__main__':
     try:
-        app.run(debug=True ,port=3000,use_reloader=False)
+        app.run(debug=True ,port=3000,host='0.0.0.0',use_reloader=False)
 
     except KeyboardInterrupt:
         # Shut down the server on keyboard interrupt
