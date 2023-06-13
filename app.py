@@ -11,6 +11,7 @@ import json
 import sys
 from collections import defaultdict
 from text_summerization import summarize_sentences
+from waitress import serve
 
 
 # Create a Flask app
@@ -137,7 +138,8 @@ generatecloud()
 # # Run the app
 if __name__ == '__main__':
     try:
-        app.run(debug=True ,port=3000,host='0.0.0.0',use_reloader=False)
+        #app.run(debug=True ,port=3000,host='0.0.0.0',use_reloader=False)
+        serve(app, host='0.0.0.0', port=3000)
 
     except KeyboardInterrupt:
         # Shut down the server on keyboard interrupt
