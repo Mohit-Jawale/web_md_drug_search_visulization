@@ -26,7 +26,7 @@ def searchpage():
 @app.route('/searchresult', methods=['POST'])
 def search_condition():
     word = request.data.decode('utf-8')
-    medicine = request.form.get("DrugName")
+    medicine = str(request.form.get("DrugName")).lower()
     ft = fasttext.load_model('cc.en.300.bin')
 
     df = pd.read_csv("webmd.csv")
